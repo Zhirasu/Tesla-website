@@ -1,0 +1,306 @@
+@import "variables";
+@import "general";
+
+
+.header-content {
+    display: flex;
+    width: 100%;
+    padding: 4px 10px;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    &:hover .hover-menu {
+        opacity: 1;
+        transition: all 1s ease;
+        pointer-events: all;
+
+    }
+    &:hover {
+        color: $color;
+
+    }
+}
+
+h1 {
+    min-inline-size: 240px;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-left: 30px;
+    a {
+        align-items: center;
+        display: inline-flex;
+        min-block-size: var(32px);
+        svg {
+            width: 120px;
+        }
+    }
+}
+
+.nav-tesla {
+    display: flex;
+    text-align: center;
+    font-family: "Gotham SSm A";
+    padding: 0 8px;
+    ul {
+        color: currentColor;
+        li {
+            padding: 15px;
+
+            a {
+                font-size: $size-texto;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+.nav-tesla_icon {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-content: end;
+    margin-right: 30px;
+    li {
+        margin-right: 10px;
+    }
+}
+
+.main-content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    div {
+        scroll-snap-align: center;
+    }
+}
+
+.content-section {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    object-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .slogan-header {
+        position: relative;
+        z-index: 10;
+        margin-top: 14vh;
+        h2 {
+            font-size: $size-h2;
+            padding: 0 25px;
+            font-weight: 500;
+            color: $color;
+        }
+        p {
+            font-weight: 100;
+            margin: 10px;
+            font-size: $size-texto;
+            line-height: 18px;
+            color: $color;
+        }
+    }
+
+    .slogan-footer {
+        position: relative;
+        padding-bottom: 10vh;
+        z-index: 10;
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 0;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        a {
+            @extend btn;
+            &:hover {
+                background-color: $color-white;
+                color: $color;
+                transition: 1s ease;
+            }
+        }
+    }
+
+    div {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+
+
+    }
+
+    .slogan-vehicule {
+        display: flex;
+        a {
+            padding: 9px 55px;
+            &:nth-child(1) {
+                margin-right: 25px;
+                background-color: $color-white;
+                color: $color;
+            }
+            &:nth-child(2) {
+                border-color: $color;
+                background-color: $color;
+            }
+        }
+    }
+}
+
+.section-1 {
+    .slogan-header {
+        h2 {
+            color: $color-white;
+        }
+
+        p {
+            color: $color-white;
+        }
+    }
+
+}
+
+.section-2 {
+    div {
+
+        img {
+            filter: brightness(1.5)
+        }
+    }
+}
+
+.section-2,
+.section-4,
+.section-5,
+.section-6 {
+    .slogan-header {
+        p {
+            border-bottom: 1.8px solid $color;
+
+        }
+    }
+}
+
+.section-7 {
+    .slogan-vehicule {
+        a {
+            border-color: $color;
+            background-color: $color-dark  !important;
+            color: $color-white  !important;
+        }
+    }
+}
+
+.section-7,
+.section-8 {
+    .slogan-vehicule {
+        a {
+            padding: 9px 80px;
+        }
+    }
+}
+
+.hover-menu {
+    background-color: $color-white;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    padding-top: 70px;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    transition: 2s ease;
+
+    &:hover {
+        opacity: 1;
+        pointer-events: all;
+        transition: all 2s ease;
+    }
+
+    div {
+        display: grid;
+        grid-template-columns: 75% auto;
+        width: 80%;
+        margin: 0 auto;
+        div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+
+            span {
+                color: $color;
+                img {
+                    width: 100%;
+                    height: auto;
+
+
+                }
+            }
+
+            &:nth-child(2) {
+                grid-template-columns: repeat(1, 1fr);
+                padding: 15px;
+                gap: 0;
+                border-left: 2px solid $color;
+                span {
+                    width: 100%;
+                    a {
+                        font-size: $size-texto;
+                        color: $color;
+                        border-bottom: 2px solid $color-2;
+                        &:hover {
+                            transition: .7s ease-in;
+                            border-bottom: 2px solid $color;
+
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+.text-hover {
+    text-align: center;
+    cursor: pointer;
+    .name-model {
+        font-weight: bold;
+    }
+    span {
+        display: flex;
+        justify-content: center;
+        padding-top: 5px;
+
+        .link-a {
+            border-bottom: 2px solid $color;
+            font-size: $size-texto-small;
+
+            &:nth-child(2) {
+                margin-left: 5px;
+
+            }
+
+            &:hover {
+                transition: .3s ease;
+                border-bottom: 2px solid $color-dark;
+                font-weight: bold;
+
+            }
+
+        }
+    }
+}
