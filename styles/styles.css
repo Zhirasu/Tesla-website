@@ -45,8 +45,11 @@ svg {
 
 video {
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   height: 100vh;
+  width:100vh;
+  object-fit: cover;
+
 }
 
 img {
